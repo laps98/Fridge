@@ -18,12 +18,14 @@ import java.util.Collections;
 
 @Component
 public class SecurityFilter extends OncePerRequestFilter  {
-    TokenService tokenService;
-    @Autowired
-    UserRepository userRepository;
+    //@Autowired
+    private TokenService tokenService;
+    //@Autowired
+    private UserRepository userRepository;
 
-    SecurityFilter(TokenService tokenService){
+    SecurityFilter(TokenService tokenService, UserRepository userRepository){
         this.tokenService = tokenService;
+        this.userRepository = userRepository;
     }
 
     @Override
